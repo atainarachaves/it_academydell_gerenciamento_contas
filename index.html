@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciamento de contas</title>
+  <link rel="stylesheet" href="src/style.css">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <span>Minhas Contas</span>
+      <button onclick="openModalAddAccount()" id="new">+ Adicionar Conta</i></button>
+      <button onclick="openMergeAccount()" id="new">Mesclar Conta</i></button>
+    </div>
+
+    <div class="mainContainer">
+      <div class="divTable">
+        <table>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="accountInfos">
+        <table>
+          <tr class="itensTable">
+            <td>Entradas: R$
+              <samp id="incomes">0,00</samp>
+            </td>
+          </tr>
+          <tr>
+            <td>Saidas: R$
+              <samp id="expenses">0,00</samp>
+            </td>
+          </tr>
+          <tr>
+            <td>Total: R$
+              <samp id="total">0,00</samp>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="modal-container">
+      <div class="modal">
+        <h3>Cadastrar conta</h3>
+        <form>
+          <label for="m-name">Nome</label>
+          <input id="m-name" type="text" required />
+
+          <label for="m-agency">Agência</label>
+          <input id="m-agency" type="number" required />
+
+          <label for="m-numberAccount">Número da conta</label>
+          <input id="m-numberAccount" type="number" required />
+          <button id="btnSalvar">Confirmar</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal-merge-account-container">
+      <div class="modal">
+        <h3>Selecione as contas que deseja mesclar</h3>
+      </div>
+    </div>
+
+    <div class="modal-new-transaction">
+      <div class="modal">
+        <h3>Transações</h3>
+        <div class="divDesc">
+          <label for="desc">Descrição</label>
+          <input type="text" id="desc" />
+        </div>
+        <div class="divAmount">
+          <label for="amount">Valor</label>
+          <input type="number" id="amount" />
+        </div>
+        <div class="divType">
+          <label for="type">Tipo</label>
+          <select id="type">
+            <option>Entrada</option>
+            <option>Saída</option>
+          </select>
+        </div>
+        <button id="btnSaveTransaction">Incluir</button>
+      </div>
+    </div>
+  </div>
+  <script src="src/js/new_transaction.js"></script>
+  <script src="src/js/add_account.js"></script>
+</body>
+
+</html>
